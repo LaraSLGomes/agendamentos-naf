@@ -18,13 +18,9 @@ export default function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/schedule" element={<PrivateRoute><Schedule /></PrivateRoute>} />
-          <Route path="/admin" element={<PrivateRoute><AdminPanel /></PrivateRoute>} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password/:token" element={<ResetPassword />} />
-          <Route path="*" element={<Navigate to="/login" />} />
+          <Route path="/schedule" element={<Schedule/>} />
+          <Route path="/admin" element={<AdminPanel />}/>
+          <Route path="*" element={<Navigate to="/schedule" />} />
         </Routes>
       </Router>
     </AuthProvider>
